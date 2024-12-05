@@ -5,8 +5,6 @@ class Virus(object):
         self.repro_rate = repro_rate
         self.mortality_rate = mortality_rate
 
-
-
 # Tested the class
 if __name__ == "__main__":
     # Created instances of the Virus class
@@ -39,5 +37,3 @@ if __name__ == "__main__":
     print(f"HIV Virus: {hiv_virus.name}")
     print(f"Reproduction Rate: {hiv_virus.repro_rate}")
     print(f"Mortality Rate: {hiv_virus.mortality_rate}")
-
-
