@@ -1,36 +1,37 @@
 import random
-# random.seed(42)
+random.seed(42)
 from virus import Virus
 
 class Person(object):
     """Represents a person in the simulation"""
-    def __init__(self, _id, is_vaccinated, infection = None):
+    def __init__(self, _id, is_vaccinated, infection=None):
         self._id = _id  
         self.is_vaccinated = is_vaccinated
         self.infection = infection
         self.is_alive = True
+        print(f"Created Person {self._id} - Vaccinated: {self.is_vaccinated}, Infected: {self.infection is not None}, Alive: {self.is_alive}")
 
     def did_survive_infection(self):
-        """Determines if the person survives the infection. 
-        Generates random number between 0.0-1.0, if number is less than mortality rate the person has passed away. 
-        Otherwise, the person has survived infection and are now vaccinated."""
+        """Determines if the person survives the infection. Generates random number between 0.0-1.0, if number is less than mortality rate the person has passed away. Otherwise, the person has survived infection and are now vaccinated."""
         if self.infection: 
             survival_chance = random.random()
+            print(f"Person {self._id} has an infection. Survival chance: {survival_chance}, Mortality rate: {self.infection.mortality_rate}")
             if survival_chance < self.infection.mortality_rate:
                 self.is_alive = False
                 self.infection = None
+                print(f"Person {self._id} did not survive.")
                 return False
             else:
                 self.is_vaccinated = True
                 self.infection = None
+                print(f"Person {self._id} survived and is now vaccinated.")
                 return True
-            return True
-            
+        return True    
 
 if __name__ == "__main__":
     """Section to test the Person Class"""
 
-    #Defined a vaccinated person and checked their attributes
+    # Defined a vaccinated person and checked their attributes
     vaccinated_person = Person(1, True)
     assert vaccinated_person._id == 1
     assert vaccinated_person.is_alive is True
