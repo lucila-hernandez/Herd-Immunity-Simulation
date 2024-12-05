@@ -5,7 +5,7 @@ from virus import Virus
 class Person(object):
     """Represents a person in the simulation"""
     def __init__(self, _id, is_vaccinated, infection = None):
-        self._id = _id  # int
+        self._id = _id  
         self.is_vaccinated = is_vaccinated
         self.infection = infection
         self.is_alive = True
@@ -80,10 +80,8 @@ if __name__ == "__main__":
     survived = person.did_survive_infection()
 
     if survived:
-        # Try to reinfect
         person.infection = virus
         reinfection_result = person.did_survive_infection()
-        # Check that they can't be infected again
         assert reinfection_result is True
         assert person.is_alive is True
         assert person.is_vaccinated is True
