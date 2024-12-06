@@ -2,11 +2,13 @@ class Logger(object):
     def __init__(self, file_name):
         """Logs information about the simulation's progress and results."""
         self.file_name = file_name
+        with open(self.file_name, 'w') as file:
+            pass
 
     def write_metadata(self, pop_size, vacc_percentage, virus_name, mortality_rate,
                        basic_repro_num):
         """Shows the starting situation including: population, initial infected, the virus, and the initial vaccinated."""
-        with open(self.file_name, 'w') as file:
+        with open(self.file_name, 'a') as file:
             file.write(f"Population size: {pop_size}\n")
             file.write(f"Vaccination Percentage: {vacc_percentage}\n")
             file.write(f"Virus Name: {virus_name}\n")
