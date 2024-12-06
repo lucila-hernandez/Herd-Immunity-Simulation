@@ -1,5 +1,5 @@
 import random
-random.seed(42)
+#random.seed(42)
 from virus import Virus
 
 class Person(object):
@@ -9,7 +9,6 @@ class Person(object):
         self.is_vaccinated = is_vaccinated
         self.infection = infection
         self.is_alive = True
-        print(f"Created Person {self._id} - Vaccinated: {self.is_vaccinated}, Infected: {self.infection is not None}, Alive: {self.is_alive}")
 
     def did_survive_infection(self):
         """Determines if the person survives the infection. Generates random number between 0.0-1.0, if number is less than mortality rate the person has passed away. Otherwise, the person has survived infection and are now vaccinated."""
