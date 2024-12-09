@@ -1,3 +1,4 @@
+import sys
 import random
 from person import Person
 from logger import Logger
@@ -101,16 +102,14 @@ class Simulation(object):
         self.newly_infected = []
 
 if __name__ == "__main__":
-    virus_name = "Sniffles"
-    repro_num = 0.5
-    mortality_rate = 0.12
-    virus = Virus(virus_name, repro_num, mortality_rate)
+    # Command-line argument tests
+    pop_size = int(sys.argv[1])
+    vacc_percentage = float(sys.argv[2])
+    virus_name = sys.argv[3]
+    mortality_rate = float(sys.argv[4])
+    repro_rate = float(sys.argv[5])
+    initial_infected = int(sys.argv[6])
 
-    # Sets some values used by the simulation
-    pop_size = 1000
-    vacc_percentage = 0.05
-    initial_infected = 50
-
-    # Makes a new instance of the simulation
+    virus = Virus(virus_name, repro_rate, mortality_rate)
     sim = Simulation(pop_size, vacc_percentage, virus, initial_infected)
     sim.run()
