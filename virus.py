@@ -12,7 +12,7 @@ if __name__ == "__main__":
     chickenpox_virus = Virus("Chickenpox", 0.8, 0.1)
     hiv_virus = Virus("HIV", 0.8, 0.3)
 
-    # Tested attributes of the created viruses
+    # Tested attributes of the created virus
     assert hiv_virus.name == "HIV"
     assert hiv_virus.repro_rate == 0.8
     assert hiv_virus.mortality_rate == 0.3
