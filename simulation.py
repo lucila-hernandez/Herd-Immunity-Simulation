@@ -66,7 +66,7 @@ class Simulation(object):
 
         for person in self.population:
             if person.infection:
-                for _ in range(500):
+                for _ in range(100):
                     other_person = random.choice(self.population)
                     interactions += 1
                     if other_person.is_alive:
