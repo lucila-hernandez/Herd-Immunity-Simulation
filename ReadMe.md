@@ -11,7 +11,7 @@ To use this project, follow the step below:
 
 1. Run the following command in your terminal: python3 simulation.py <population_size> <vacc_percentage> <virus_name> <mortality_rate> <repro_rate> <initial_infected>
 
-###Here's an example of how to run the simulation:
+Here's an example of how to run the simulation:
 
 Population Size: 100,000
 Vaccination Percentage: 90%
