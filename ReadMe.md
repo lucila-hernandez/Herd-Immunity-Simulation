@@ -13,12 +13,12 @@ To use this project, follow the step below:
 
 Here's an example of how to run the simulation:
 
-Population Size: 100,000
-Vaccination Percentage: 90%
-Virus Name: Ebola
-Mortality Rate: 70%
-Reproduction Rate: 25%
-People Initially Infected: 10
++ Population Size: 100,000,
++ Vaccination Percentage: 90%,
++ Virus Name: Ebola,
++ Mortality Rate: 70%
++ Reproduction Rate: 25%
++ People Initially Infected: 10
 
 Then you would type: 
 python3 simulation.py 100000 0.90 Ebola 0.70 0.25 10
